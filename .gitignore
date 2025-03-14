@@ -1,0 +1,12 @@
+*/logs/
+*.log
+*.pid
+
+sites-enabled/
+
+*/ssl/
+*.crt
+*.key
+
+.htpasswd
+
