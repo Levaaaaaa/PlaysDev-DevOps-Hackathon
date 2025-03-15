@@ -2,11 +2,9 @@
 *.log
 *.pid
 
-sites-enabled/
-
-*/ssl/
-*.crt
-*.key
+# */ssl/
+# *.crt
+# *.key
 
 .htpasswd
 
