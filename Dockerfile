@@ -1,15 +1,14 @@
-FROM nginx  
+# Use the official Nginx image from Docker Hub
+FROM nginx:latest
 
-COPY nginx/www/index.html /var/www/html/index.html
-COPY nginx/www/secondpage.html /var/www/html/secondpage.html
-COPY nginx/www/music/music.mp3 /var/www/music/music.mp3
+# Copy the static HTML site to the Nginx directory
+COPY ./html /usr/share/nginx/html
 
-RUN rm -f /etc/nginx/conf.d/default.conf
-COPY nginx/sites-available/default.conf /etc/nginx/conf.d/default.conf
+# Copy custom Nginx configuration
+COPY ./nginx/default.conf /etc/nginx/conf.d/
 
-RUN rm -f /etc/nginx/nginx.conf
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
-
-VOLUME /var/log/nginx
-
+# Expose port 80 for the website
 EXPOSE 80
+
+# CMD для запуска Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,10 +1,30 @@
-services:
-  my-nginx:
-    build: .
-    container_name: nginx-cont
-    restart: always
-    ports:
-        - "80:80"
-    volumes:
-        - ./nginx/logs:/var/log/nginx
+version: '3.8'
 
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: static-website
+    ports:
+      - "80:80"  # Expose the website on port 80
+    volumes:
+      - ./html:/var/www/html  # Bind mount the html folder
+    networks:
+      - web-network
+    depends_on:
+      - php
+
+  php:
+    image: php:7.4-fpm
+    container_name: php-server
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "9000:9000"  # Expose PHP-FPM port
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
