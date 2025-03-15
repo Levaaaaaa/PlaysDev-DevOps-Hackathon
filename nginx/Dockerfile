@@ -1,4 +1,4 @@
-FROM nginx  
+FROM nginx:latest  
 
 COPY www /var/www/
 # COPY nginx/www/secondpage.html /var/www/html/secondpage.html

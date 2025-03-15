@@ -10,3 +10,11 @@ or use Docker Compose:
 docker compose up
 ``` 
 URL for requests: `localhost:80`
+
+
+## Best practices
+
+- Added specified base image versions
+- Utilized .dockerignore to exclude unnecessary files (*.md, *.tmp)
+- Targeted copying, not whole directory
+- Using EXPOSE to expose specific ports
