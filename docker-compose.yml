@@ -5,7 +5,8 @@ services:
   my-nginx:
     depends_on:
       - my-apache
-    build: ./nginx/
+    image: laniv/playsdev-nginx
+    # build: ./nginx/
     container_name: playsdev-nginx-cont
     restart: always
     ports:
@@ -17,7 +18,8 @@ services:
       - my-network
 
   my-apache:
-    build: ./apache
+    # build: ./apache
+    image: laniv/playsdev-apache
     container_name: playsdev-apache-cont
     ports:
       - "8080:80"
