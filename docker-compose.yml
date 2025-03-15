@@ -1,0 +1,10 @@
+services:
+  my-nginx:
+    build: .
+    container_name: nginx-cont
+    restart: always
+    ports:
+        - "80:80"
+    volumes:
+        - ./nginx/logs:/var/log/nginx
+
