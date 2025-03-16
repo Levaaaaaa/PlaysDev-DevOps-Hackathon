@@ -42,7 +42,7 @@
 - Базы данных (для сервисов, Postgres, MongoDB)
 - Асинхронные очереди (Kafka)
 - Прокси и баланс нагрузки (Nginx)
-- Мониторинг (Prometeus, Grafana)
+- Мониторинг (Prometeus, Grafana, Loki, Promtail)
 
 </p>
 
