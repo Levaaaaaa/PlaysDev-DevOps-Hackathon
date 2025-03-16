@@ -54,7 +54,7 @@
               "type": "markdown",
               "state": {
                 "file": "App-description.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -209,12 +209,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a218724db29ea1fc",
+  "active": "0cdd491b3b09a1d9",
   "lastOpenFiles": [
-    "App-description 1.md",
-    "App-description.md",
-    "Architecture Patterns.md",
     "Architecture.md",
+    "App-description.md",
+    "App-description 1.md",
+    "Architecture Patterns.md",
     "Welcome.md"
   ]
 }

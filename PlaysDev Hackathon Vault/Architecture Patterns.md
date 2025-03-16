@@ -1,7 +1,0 @@
-- Load Balancer
-- Gateway
-- Healthcheck
-- Idempotent Consumer
-- Circuit breaker
-- Retry
-- Dummy
