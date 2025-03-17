@@ -1,0 +1,28 @@
+networks:
+  my-network:
+    driver: bridge
+services:
+  my-nginx:
+    depends_on:
+      - my-apache
+    image: laniv/playsdev-nginx
+    # build: ./nginx/
+    container_name: playsdev-nginx-cont
+    restart: always
+    ports:
+        - "80:80"
+        - "443:443"
+    volumes:
+        - ./nginx/logs:/var/log/nginx
+    networks:
+      - my-network
+
+  my-apache:
+    # build: ./apache
+    image: laniv/playsdev-apache
+    container_name: playsdev-apache-cont
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - my-network
